@@ -82,13 +82,33 @@ body {
     margin-right: 10px;
 }
 
+#corner-deco {
+    height: 40px;
+    display: inline-block;
+    float: right;
+}
+
 #a-quote {
 
 }
 
 #a-quote-svg {
-    width: 300px;
-    margin: 100px auto 20px;
+    width: 340px;
+    margin: 50px auto 20px;
     display: block;
 
+}
+
+#a-content {
+    text-align: center;
+    font-size: 20px;
+    margin: 33px auto;
+    letter-spacing: 1px;
+    line-height: 26px;
+}
+
+.footer-svg {
+    height: 48px;
+    margin: 30px auto 0;
+    display: block;
 }
