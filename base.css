@@ -259,3 +259,7 @@ body {
 #main-a, #bg-a, #main-b, #bg-b {
     display: none;
 }
+
+#bg-c {
+    background-color: #222222;
+}
