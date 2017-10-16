@@ -232,9 +232,12 @@ body {
     font-size: 33px;
     letter-spacing: 3px;
     color: #656e75;
-    margin: 20px auto 50px;
+    margin: 0px auto 10px;
     line-height: 46px;
+}
 
+#b-quote-svg {
+    height: 146px;
 }
 
 #b-footer {
