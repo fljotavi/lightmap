@@ -10,6 +10,11 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+*::selection {
+    background-color: #4189ff;
+    color: #EEE;
+}
+
 body {
     color: #EEE;
     width: 100vw;
@@ -32,7 +37,7 @@ body {
     text-align: center;
     border-radius: 35px;
     margin: 0 auto;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px 0 rgba(63,136,255,0.4);
     transition: all .3s;
 }
 
@@ -41,7 +46,7 @@ body {
 }
 
 .button:active {
-    transform: scale(1.02);
+    transform: scale(1.08);
 }
 
 .overlay:after {
