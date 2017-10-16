@@ -403,9 +403,7 @@ var convertData = function (data) {
     return res;
 };
 
-function renderItem(params, api) {
 
-}
 
 option = {
     title: {
@@ -580,12 +578,9 @@ option = {
             },
             itemStyle: {
                 normal: {
-                    color: '#888888',
-
+                    color: '#888888'
                 }
             }
-        },
-
-
+        }
     ]
 };
