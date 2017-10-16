@@ -51,7 +51,7 @@
         为母校送上祝福
     </div>
     <div id="a-button">
-        <div id="a-button-self" class="button mincho">送祝福</div>
+        <div id="a-button-self" class="button mincho primary">送祝福</div>
     </div>
     <div id="a-footer">
         <img id="a-footer-svg" class="footer-svg" src="images/footer-light.svg">
@@ -63,13 +63,51 @@
 </div>
 
 <div id="main-b" class="main">
-    <div id="button-b" class="button">校友地图</div>
+    <div id="b-title">各地校友分会</div>
+
+    <div class="siema">
+        <div class="carousel-item">
+            <div class="carousel-heading">
+                <div class="left-arrow arrow"><</div>
+                <div class="carousel-button button">南加州校友分会</div>
+                <div class="right-arrow arrow">></div>
+            </div>
+            <img class="carousel-image" src="images/tju-gold.jpg">
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-heading">
+                <div class="left-arrow arrow"><</div>
+                <div class="carousel-button button">南加州校友分会</div>
+                <div class="right-arrow arrow">></div>
+            </div>
+            <img class="carousel-image" src="images/tju-gold.jpg">
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-heading">
+                <div class="left-arrow arrow"><</div>
+                <div class="carousel-button button">南加州校友分会</div>
+                <div class="right-arrow arrow">></div>
+            </div>
+            <img class="carousel-image" src="images/tju-gold.jpg">
+        </div>
+    </div>
+
+    <div id="b-quote" class="mincho">我们在不同的地方发光发热<br />我们仍共同传承着天大精神</div>
+
+    <div id="b-button" class="button mincho primary">校友地图</div>
+    <div id="b-footer">
+        <img src="images/footer-dark.svg" class="footer-svg">
+    </div>
 </div>
 
 </body>
 
+<script src="libs/siema.min.js"></script>
+
 <script>
     AOS.init();
+    const mySiema = new Siema();
+
 </script>
 
 </html>
