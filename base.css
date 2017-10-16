@@ -1,12 +1,53 @@
 * {
     background-position: center;
     background-size: cover;
+
 }
 
 body {
     color: #EEE;
     width: 100vw;
     background-color: #222;
+}
+
+.mincho {
+    font-family: '方正清刻本悦宋简体', '华文中宋', serif;
+}
+
+.button {
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+    width: 350px;
+    background-color: #4189ff;
+    color: #EEE;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-align: center;
+    border-radius: 35px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+    transition: all .3s;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button:active {
+    transform: scale(1.02);
+}
+
+.overlay:after {
+    background: #000;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .main {
@@ -22,22 +63,32 @@ body {
 }
 
 #a-heading {
-    height: 12%;
+    height: 6%;
+}
+
+#a-title {
+    height: 100%;
+    float: left;
+    display: inline-block;
+    padding-top: 10px;
+    line-height: 30px;
+    font-size: 25px;
 }
 
 #a-logo {
     display: inline-block;
-    height: 100px;
+    height: 100%;
+    float: left;
+    margin-right: 10px;
 }
 
-.overlay:after {
-    background: #000;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    pointer-events: none;
-    opacity: 0.5;
+#a-quote {
+
+}
+
+#a-quote-svg {
+    width: 300px;
+    margin: 100px auto 20px;
+    display: block;
+
 }
