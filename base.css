@@ -1,6 +1,17 @@
 /*---------------
     Overall
 ---------------*/
+@font-face {
+    font-family: 'keben';
+    src: url('assets/keben.eot');
+    src:
+            url('assets/keben.eot?#font-spider') format('embedded-opentype'),
+            url('assets/keben.woff') format('woff'),
+            url('assets/keben.ttf') format('truetype'),
+            url('assets/keben.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
     background-position: center;
@@ -23,7 +34,7 @@ body {
 }
 
 .mincho {
-    font-family: '方正清刻本悦宋简体', '华文中宋', serif;
+    font-family: 'keben','华文中宋', serif;
 }
 
 .button {
@@ -185,10 +196,6 @@ body {
     Part B
 ---------------*/
 
-#main-a, #bg-a {
-    display: none;
-}
-
 #bg-b {
     background-color: #F9F9F9;
 }
@@ -242,4 +249,13 @@ body {
 
 #b-footer {
     opacity: 0.5;
+}
+
+
+/*---------------
+    Part C
+---------------*/
+
+#main-a, #bg-a, #main-b, #bg-b {
+    display: none;
 }
