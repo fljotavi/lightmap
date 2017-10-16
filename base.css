@@ -1,14 +1,21 @@
+* {
+    background-position: center;
+    background-size: cover;
+}
+
 body {
     color: #EEE;
     width: 100vw;
     background-color: #222;
 }
 
-#main {
+.main {
     width: 720px;
     height: 1280px;
     margin: 0 auto;
+}
+
+#main-a {
     background-image: url("images/tju-bw.jpg");
-    background-position: center;
-    background-size: cover;
+    padding: 70px;
 }
