@@ -13,9 +13,31 @@ body {
     width: 720px;
     height: 1280px;
     margin: 0 auto;
+    padding: 60px;
 }
 
 #main-a {
     background-image: url("images/tju-bw.jpg");
-    padding: 70px;
+
+}
+
+#a-heading {
+    height: 12%;
+}
+
+#a-logo {
+    display: inline-block;
+    height: 100px;
+}
+
+.overlay:after {
+    background: #000;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0.5;
 }
