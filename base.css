@@ -291,10 +291,61 @@ body {
     height: 600px;
     width: 720px;
     top: 0;
+    pointer-events: none;
 }
 
 #c-bar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px;
+    pointer-events: auto;
+}
 
+#c-bar-logo, #c-bar-title, #c-bar-share {
+    display: inline-block;
+}
+
+#c-bar-title {
+    letter-spacing: 1px;
+    font-size: 22px;
+    line-height: 80px;
+}
+
+#c-bar-logo {
+    height: 80px;
+}
+
+#c-bar-share {
+    height: 80px;
+    width: 80px;
+    line-height: 80px;
+    margin: 0;
+    border-radius: 50%;
+}
+
+#c-count-line {
+    margin-top: 412px;
+}
+
+#c-count-logo {
+    height: 30px;
+    transform: translateY(10px);
+    margin-right: 5px;
+}
+
+#light-count {
+    color: #4189ff;
+}
+#loc-self {
+    display: inline;
+    height: 40px;
+    transform: translateY(10px);
+}
+
+#share-self {
+    height: 40px;
+    margin: 20px;
 }
 
 #c-button {
