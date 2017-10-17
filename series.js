@@ -193,7 +193,7 @@ var data = [
 ];
 
 data.forEach(function (currentValue, i) {
-    currentValue.value = 10;
+    currentValue.value = 50;
 });
 
 var geoCoordMap = {
@@ -389,32 +389,28 @@ var geoCoordMap = {
     '大庆':[125.03,46.58]
 };
 
+
+function generateAmbient(geoCoord) {
+    return [geoCoord[0] + (Math.random() - 0.5)*2,
+        geoCoord[1] + (Math.random() - 0.5)*2];
+}
+
 var convertData = function (data) {
     var res = [];
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < 100; i++) {
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
             res.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value)
+                value: geoCoord
             });
         }
     }
+    console.log(res);
     return res;
 };
 
-
-
 option = {
-    title: {
-        text: '全国主要城市空气质量',
-        subtext: 'data from PM25.in',
-        sublink: 'http://www.pm25.in',
-        left: 'center',
-        textStyle: {
-            color: '#fff'
-        }
-    },
+
     tooltip : {
         trigger: 'item'
     },
@@ -559,12 +555,12 @@ option = {
     series : [
         {
             blendMode: 'lighter',
-            name: 'pm2.5',
+            name: 'Alumni',
             type: 'scatter',
             coordinateSystem: 'bmap',
             data: convertData(data),
             symbolSize: function (val) {
-                return val[2] / 10;
+                return 4;
             },
             label: {
                 normal: {
@@ -578,7 +574,9 @@ option = {
             },
             itemStyle: {
                 normal: {
-                    color: '#888888'
+                    color: '#888888',
+                    shadowColor: '#888888',
+                    shadowBlur: '10'
                 }
             }
         }

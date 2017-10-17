@@ -263,3 +263,7 @@ body {
 #bg-c {
     background-color: #222222;
 }
+
+.anchorBL {
+    display: none !important;
+}

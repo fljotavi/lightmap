@@ -17,12 +17,14 @@
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="base.css">
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <script src="libs/jquery-3.0.0.min.js"></script>
     <script src="libs/hammer.min.js"></script>
     <script src="libs/hammer-time.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="libs/aos.css">
     <script src="libs/aos.js"></script>
-    <script src="libs/echarts.js"></script>
+
 
 </head>
 
@@ -103,6 +105,10 @@
 
 <div id="bg-c" class="bg"></div>
 
+<div id="main-c" class="main" style="width: 100%; height: 100%; background-color: red">
+
+</div>
+
 </body>
 
 <script src="libs/siema.min.js"></script>
@@ -111,6 +117,17 @@
     AOS.init();
     const mySiema = new Siema({
     });
+</script>
+
+
+<script src="http://api.map.baidu.com/api?v=2.0&ak=iTXj7xIWimk26VaXAWMMlRPU1bk35h8t"></script>
+<script src="libs/echarts.js"></script>
+<script src="libs/bmap.js"></script>
+<script src="series.js"></script>
+<script>
+
+    var seriesContainer = echarts.init(document.getElementById('main-c'));
+    seriesContainer.setOption(option);
 </script>
 
 </html>
