@@ -105,8 +105,23 @@
 
 <div id="bg-c" class="bg"></div>
 
-<div id="main-c" class="main" style="width: 100%; height: 100%; background-color: red">
-
+<div id="main-c" class="main">
+    <div id="c-map"></div>
+    <div id="c-button" class="button mincho primary">点亮地图</div>
+    <div id="c-title" class="mincho">天津大学世界校友大会</div>
+    <div id="c-qr-line">
+        <div class="c-qr-block">
+            <div class="c-qr-title">天津大学官方微信二维码</div>
+            <img class="c-qr-self" src="images/leftqr.svg">
+        </div>
+        <div class="c-qr-block">
+            <div class="c-qr-title">天津大学校友会微信二维码</div>
+            <img class="c-qr-self" src="images/rightqr.svg">
+        </div>
+    </div>
+    <div id="c-footer" class="footer">
+        <img src="images/footer-dark.svg" class="footer-svg">
+    </div>
 </div>
 
 </body>
@@ -125,8 +140,7 @@
 <script src="libs/bmap.js"></script>
 <script src="series.js"></script>
 <script>
-
-    var seriesContainer = echarts.init(document.getElementById('main-c'));
+    var seriesContainer = echarts.init(document.getElementById('c-map'));
     seriesContainer.setOption(option);
 </script>
 

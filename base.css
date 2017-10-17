@@ -57,6 +57,13 @@ body {
     letter-spacing: 10px;
 }
 
+.light {
+    background-color: #EEE;
+    color: #222;
+    box-shadow: 0 5px 20px 0 rgba(255,255,255,0.4);
+    letter-spacing: 10px;
+}
+
 .carousel-button {
     background-color: #9badbb;
     color: #FAFAFA;
@@ -260,10 +267,67 @@ body {
     display: none;
 }
 
+#main-c {
+    width: 100%;
+    height: 100%;
+}
+
 #bg-c {
-    background-color: #222222;
+    background-color: #F9F9F9;
 }
 
 .anchorBL {
     display: none !important;
+}
+
+#c-map {
+    width: 100%;
+    height: 600px;
+}
+
+#c-button {
+    z-index: 300;
+    margin-top: -30px;
+    position: absolute;
+    margin-left: 200px;
+}
+
+#c-title{
+    letter-spacing: 2px;
+    font-size: 39px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    color: #222222;
+
+}
+
+#c-qr-line {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto;
+    color: #222222;
+}
+
+.c-qr-block {
+    width: 280px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 20px;
+    height: 300px;
+    background-color: white;
+}
+
+.c-qr-title {
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.c-qr-self {
+    opacity: 0.7;
+    width: 220px;
+}
+
+#c-footer {
+    opacity: 0.5;
 }

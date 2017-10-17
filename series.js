@@ -415,8 +415,8 @@ option = {
         trigger: 'item'
     },
     bmap: {
-        center: [104.114129, 37.550339],
-        zoom: 5,
+        center: [50.114129, 55.550339],
+        zoom: 1,
         roam: true,
         mapStyle: {
             styleJson: [
