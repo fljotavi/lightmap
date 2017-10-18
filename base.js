@@ -39,10 +39,16 @@ $('#b-button').click(function () {
     toPage(1,2);
 });
 
-$('#share-self').click(function () {
-    // var clipBoardContent = document.location;
-    // clipBoardContent += '\r\n';
-    // window.clipboardData.setData("Text", clipBoardContent);
-    // Create an instance of Notyf
+var clipLink = new Clipboard('#share-self', {
+    text: function (a) {
+        return window.location.href;
+    }
+});
 
+clipLink.on('success', function(e) {
+    iqwerty.toast.Toast('✎ 链接已复制到剪贴板');
+});
+
+clipLink.on('error', function(e) {
+    iqwerty.toast.Toast('✎ 链接复制失败，请手动选中复制');
 });
