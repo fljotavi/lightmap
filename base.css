@@ -467,6 +467,7 @@ body {
 .c-qr-self {
     opacity: 0.7;
     width: 170px;
+    pointer-events: none;
 }
 
 #c-info {
