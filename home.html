@@ -36,25 +36,25 @@
 
 <div id="main-a" class="main">
 
-    <div id="a-heading">
+    <div id="a-heading" data-aos="flip-down">
         <img id="a-logo" src="images/tju.svg">
         <div id="a-title" class="mincho">天津大学 (北洋大学) 122周年<br />第十一届世界校友大会</div>
         <img id="corner-deco" src="images/corner-deco.svg">
     </div>
-    <div id="a-quote">
+    <div id="a-quote" data-aos="fade-up" data-aos-delay="800">
         <img id="a-quote-svg" src="images/quote.svg">
     </div>
-    <div id="a-content" class="mincho">
+    <div id="a-content" class="mincho" data-aos="zoom-out" data-aos-delay="1000">
         天津大学第十一届校友大会<br />
         将于 10 月 28 日在长沙举行<br />
         不论你此刻正在世界哪个国家、哪个城市<br />
         在这里，一起点亮校友地图<br />
         为母校送上祝福
     </div>
-    <div id="a-button">
+    <div id="a-button" data-aos="fade-right" data-aos-delay="1300">
         <div id="a-button-self" class="button mincho primary">送祝福</div>
     </div>
-    <div id="a-footer">
+    <div id="a-footer" data-aos="flip-down" data-aos-delay="1600">
         <img id="a-footer-svg" class="footer-svg" src="images/footer-light.svg">
     </div>
 </div>
@@ -140,22 +140,42 @@
     </div>
 </div>
 
+<div id="shade-panel">
+    <div id="shade-content">
+        <img id="earth-svg" src="images/earth.svg">
+        <div id="earth-follow">LOADING</div>
+    </div>
+</div>
+
 </body>
 
 <script src="libs/siema.min.js"></script>
 
 <script>
-    AOS.init();
-    const mySiema = new Siema({
-    });
+
+
 </script>
 
+<script>
+
+
+</script>
 
 <script src="http://api.map.baidu.com/api?v=2.0&ak=iTXj7xIWimk26VaXAWMMlRPU1bk35h8t"></script>
 <script src="libs/echarts.js"></script>
 <script src="libs/bmap.js"></script>
 <script src="series.js"></script>
+
+<script src="base.js"></script>
+
 <script>
+    setTimeout(function () {
+        revealPage();
+        AOS.init({
+            duration: 1000,
+            delay: 500
+        });
+    },1000);
     var seriesContainer = echarts.init(document.getElementById('c-map'));
     seriesContainer.setOption(option);
 </script>

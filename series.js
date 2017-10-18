@@ -405,7 +405,6 @@ var convertData = function (data) {
             });
         }
     }
-    console.log(res);
     return res;
 };
 
