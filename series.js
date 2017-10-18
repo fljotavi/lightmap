@@ -578,6 +578,35 @@ option = {
                     shadowBlur: '10'
                 }
             }
+        },
+        {
+            name: 'myLocation',
+            type: 'effectScatter',
+            coordinateSystem: 'bmap',
+            data: [],
+            symbolSize: function (val) {
+                return 20;
+            },
+            showEffectOn: 'render',
+            rippleEffect: {
+                brushType: 'stroke'
+            },
+            hoverAnimation: true,
+            label: {
+                normal: {
+                    formatter: '{b}',
+                    position: 'right',
+                    show: true
+                }
+            },
+            itemStyle: {
+                normal: {
+                    color: '#eeeeee',
+                    shadowBlur: 10,
+                    shadowColor: '#cccccc'
+                }
+            },
+            zlevel: 1
         }
     ]
 };

@@ -2,6 +2,7 @@ var shadePanel = $('#shade-panel');
 var bgs = [$('#bg-a'), $('#bg-b'), $('#bg-c')];
 var mains = [$('#main-a'), $('#main-b'), $('#main-c')];
 var beenThere = [true, false, false];
+window.geoAvailable = false;
 
 function revealPage() {
     shadePanel.fadeOut();
@@ -12,10 +13,15 @@ function hidePage() {
 }
 
 function geoOnSuccess(pos) {
-    var crd = pos.coords;
+    geoAvailable = true;
+    window.crd = pos.coords;
     iqwerty.toast.Toast("已获取地理位置");
     $('#c-bar-loc-text').text("已获取地理位置");
     console.log(crd.longitude, crd.latitude);
+
+    option.bmap.center = [crd.longitude, crd.latitude];
+    option.bmap.zoom = 5;
+    seriesContainer.setOption(option);
 
     var locApiUrl = "https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=" + crd.latitude + "," + crd.longitude + "&output=json&pois=1&ak=iTXj7xIWimk26VaXAWMMlRPU1bk35h8t";
 
@@ -28,13 +34,13 @@ function geoOnSuccess(pos) {
         complete: function (data) {
             var v = data.responseJSON.result.addressComponent;
             $('#c-bar-loc-text').text(v.country + ' ' + v.city + ' ' + v.district);
+
         }
     })
 
 }
 
 function geoOnError(pos) {
-    var crd = pos.coords;
     iqwerty.toast.Toast("没有权限，地理位置获取失败");
 }
 
@@ -56,7 +62,7 @@ function toPage(currentPage, destination) {
                 timeout: 5000,
                 maximumAge: 0
             };
-            var seriesContainer = echarts.init(document.getElementById('c-map'));
+            window.seriesContainer = echarts.init(document.getElementById('c-map'));
             seriesContainer.setOption(option);
             navigator.geolocation.getCurrentPosition(geoOnSuccess, geoOnError, geoOptions);
         }
@@ -85,4 +91,15 @@ clipLink.on('success', function(e) {
 
 clipLink.on('error', function(e) {
     iqwerty.toast.Toast('✎ 链接复制失败，请手动选中复制');
+});
+
+$('#c-button').click(function () {
+    if (geoAvailable) {
+        option.series[1].data = [[crd.longitude, crd.latitude]];
+        seriesContainer.setOption(option);
+        iqwerty.toast.Toast('✎ 点亮啦');
+    }
+    else {
+        iqwerty.toast.Toast('✎ 尚无法获取您的地理位置，请稍后重试');
+    }
 });
