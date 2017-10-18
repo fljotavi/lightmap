@@ -13,12 +13,29 @@ function hidePage() {
 
 function geoOnSuccess(pos) {
     var crd = pos.coords;
-    iqwerty.toast.Toast(crd.latitude);
+    iqwerty.toast.Toast("已获取地理位置");
+    $('#c-bar-loc-text').text("已获取地理位置");
+    console.log(crd.longitude, crd.latitude);
+
+    var locApiUrl = "https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=" + crd.latitude + "," + crd.longitude + "&output=json&pois=1&ak=iTXj7xIWimk26VaXAWMMlRPU1bk35h8t";
+
+    $.ajax({
+        url: locApiUrl,
+        type: 'GET',
+        data: {
+        },
+        dataType: 'JSONP',
+        complete: function (data) {
+            var v = data.responseJSON.result.addressComponent;
+            $('#c-bar-loc-text').text(v.country + ' ' + v.city + ' ' + v.district);
+        }
+    })
+
 }
 
 function geoOnError(pos) {
     var crd = pos.coords;
-    iqwerty.toast.Toast(地理位置获取失败);
+    iqwerty.toast.Toast("没有权限，地理位置获取失败");
 }
 
 function toPage(currentPage, destination) {
@@ -34,13 +51,11 @@ function toPage(currentPage, destination) {
             });
         }
         if (destination == 2 && beenThere[destination] == false) {
-            
             var geoOptions = {
-                enableHighAccuracy: true,
+                enableHighAccuracy: false,
                 timeout: 5000,
                 maximumAge: 0
             };
-
             var seriesContainer = echarts.init(document.getElementById('c-map'));
             seriesContainer.setOption(option);
             navigator.geolocation.getCurrentPosition(geoOnSuccess, geoOnError, geoOptions);
