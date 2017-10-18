@@ -40,7 +40,9 @@ $('#b-button').click(function () {
 });
 
 $('#share-self').click(function () {
-    var clipBoardContent = document.location;
-    clipBoardContent += '\r\n';
-    window.clipboardData.setData("Text", clipBoardContent);
+    // var clipBoardContent = document.location;
+    // clipBoardContent += '\r\n';
+    // window.clipboardData.setData("Text", clipBoardContent);
+    // Create an instance of Notyf
+
 });
