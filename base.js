@@ -3,6 +3,7 @@ var bgs = [$('#bg-a'), $('#bg-b'), $('#bg-c')];
 var mains = [$('#main-a'), $('#main-b'), $('#main-c')];
 var beenThere = [true, false, false];
 window.geoAvailable = false;
+window.dataSeries = [];
 
 function revealPage() {
     shadePanel.fadeOut();
@@ -19,10 +20,6 @@ function geoOnSuccess(pos) {
     $('#c-bar-loc-text').text("已获取地理位置");
     console.log(crd.longitude, crd.latitude);
 
-    option.bmap.center = [crd.longitude, crd.latitude];
-    option.bmap.zoom = 5;
-    seriesContainer.setOption(option);
-
     var locApiUrl = "https://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=" + crd.latitude + "," + crd.longitude + "&output=json&pois=1&ak=iTXj7xIWimk26VaXAWMMlRPU1bk35h8t";
 
     $.ajax({
@@ -34,7 +31,6 @@ function geoOnSuccess(pos) {
         complete: function (data) {
             var v = data.responseJSON.result.addressComponent;
             $('#c-bar-loc-text').text(v.country + ' ' + v.city + ' ' + v.district);
-
         }
     })
 
@@ -57,14 +53,28 @@ function toPage(currentPage, destination) {
             });
         }
         if (destination == 2 && beenThere[destination] == false) {
+
+            $.getJSON({
+                url: "data/dataSeries.json",
+                data: {
+                },
+                complete: function (res) {
+                    window.dataSeries = res.responseJSON;
+                    option.series[0].data = window.dataSeries;
+                    window.seriesContainer = echarts.init(document.getElementById('c-map'));
+                    seriesContainer.setOption(option);
+                }
+            });
+
             var geoOptions = {
                 enableHighAccuracy: false,
                 timeout: 5000,
                 maximumAge: 0
             };
-            window.seriesContainer = echarts.init(document.getElementById('c-map'));
-            seriesContainer.setOption(option);
+
+
             navigator.geolocation.getCurrentPosition(geoOnSuccess, geoOnError, geoOptions);
+
         }
         beenThere[destination] = true;
         revealPage();
@@ -95,6 +105,9 @@ clipLink.on('error', function(e) {
 
 $('#c-button').click(function () {
     if (geoAvailable) {
+        option.bmap.center = [crd.longitude, crd.latitude];
+        option.bmap.zoom = 5;
+        seriesContainer.setOption(option);
         option.series[1].data = [[crd.longitude, crd.latitude]];
         seriesContainer.setOption(option);
         iqwerty.toast.Toast('✎ 点亮啦');
