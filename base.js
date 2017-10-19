@@ -106,7 +106,7 @@ clipLink.on('error', function(e) {
 $('#c-button').click(function () {
     if (geoAvailable) {
         option.bmap.center = [crd.longitude, crd.latitude];
-        option.bmap.zoom = 5;
+        option.bmap.zoom = 3;
         seriesContainer.setOption(option);
         option.series[1].data = [[crd.longitude, crd.latitude]];
         seriesContainer.setOption(option);
