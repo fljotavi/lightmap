@@ -1,6 +1,7 @@
 var shadePanel = $('#shade-panel');
 var bgs = [$('#bg-a'), $('#bg-b'), $('#bg-c')];
 var mains = [$('#main-a'), $('#main-b'), $('#main-c')];
+var lightCount = $('#light-count');
 var beenThere = [true, false, false];
 window.geoAvailable = false;
 window.dataSeries = [];
@@ -111,6 +112,15 @@ $('#c-button').click(function () {
         option.series[1].data = [[crd.longitude, crd.latitude]];
         seriesContainer.setOption(option);
         iqwerty.toast.Toast('✎ 点亮啦');
+
+        $.ajax({
+            url: "data/",
+            type: 'POST',
+            data: "["+crd.longitude+","+crd.latitude+"]",
+            complete: function (data) {
+                lightCount.text(parseInt(lightCount.text()) + 1);
+            }
+        })
     }
     else {
         iqwerty.toast.Toast('✎ 尚无法获取您的地理位置，请稍后重试');
