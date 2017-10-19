@@ -13,7 +13,7 @@ function hidePage() {
 }
 
 function geoOnSuccess(pos) {
-    geoAvailable = true;
+    window.geoAvailable = true;
     window.crd = pos.coords;
     iqwerty.toast.Toast("已获取地理位置");
     $('#c-bar-loc-text').text("已获取地理位置");
@@ -41,7 +41,7 @@ function geoOnSuccess(pos) {
 }
 
 function geoOnError(pos) {
-    iqwerty.toast.Toast("没有权限，地理位置获取失败");
+    iqwerty.toast.Toast("没有权限，地理位置获取失败。请尝试在微信端或浏览器内打开。");
 }
 
 function toPage(currentPage, destination) {
