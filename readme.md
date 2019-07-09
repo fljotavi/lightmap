@@ -22,3 +22,8 @@ After the congress, a series of data visualization was also designed & implement
 
 ![Lights by Provinces](visualization/provinces-1500x1628.png?raw=true)
 
+## Credits
+
+- UI/UX Design - [Haibo Yu](http://owlling.com/)
+- Data Visualization - Tzingtao Chow
+- Web Development - Tzingtao Chow, [Haichi Wang](https://www.liebes.top/), Zhenlei Yu
