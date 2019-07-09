@@ -1,8 +1,9 @@
 #main-c, #bg-c, #main-b, #bg-b {
     display: none;
+    
 }
 
-#shade-panel {
+#shade-panel, #share-panel {
     width: inherit;
     height: inherit;
     background-color: black;
@@ -11,13 +12,30 @@
     top: 0;
 }
 
+#shade-panel {
+    background-color: #143882;
+    /*background-color: #ee1111;*/
+}
+
+#share-panel {
+    display: none;
+    opacity: 0.9;
+}
+
+
+#share-svg {
+    width: 88%;
+    margin: 20px auto;
+    display: block;
+}
+
 #earth-svg {
     width: 100px;
     display: block;
     margin: 0 auto;
     -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
     animation: pulsate-fwd 3s ease-in-out infinite both;
-
+    opacity: 0.6;
 }
 
 #shade-content {
@@ -115,7 +133,7 @@ body {
 }
 
 .mincho {
-    font-family: 'keben','华文中宋', serif;
+    font-family: 'keben','华文中宋', sans-serif;
 }
 
 .button {
@@ -148,7 +166,8 @@ body {
 .carousel-button {
     background-color: #9badbb;
     color: #FAFAFA;
-    font-size: 22px;
+    font-size: 25px;
+    letter-spacing: 1px;
 }
 
 .not-current {
@@ -188,7 +207,6 @@ body {
     width: 720px;
     height: 1240px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .bg {
@@ -235,16 +253,17 @@ body {
 }
 
 #a-heading {
-    height: 77px;
+    height: 70px;
 }
 
 #a-title {
     height: 100%;
     float: left;
     display: inline-block;
-    padding-top: 10px;
-    line-height: 30px;
-    font-size: 25px;
+    padding-top: 0;
+    line-height: 34px;
+    font-size: 29px;
+    text-align: left;
 }
 
 #a-logo {
@@ -265,17 +284,17 @@ body {
 }
 
 #a-quote-svg {
-    width: 340px;
-    margin: 50px auto 20px;
+    width: 380px;
+    margin: 50px auto 1px;
     display: block;
 
 }
 
 #a-content {
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
     margin: 33px auto;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 33px;
 }
 
@@ -296,9 +315,9 @@ body {
 #b-title {
     text-align: center;
     letter-spacing: 4px;
-    padding-top: 60px;
-    padding-bottom: 60px;
-    font-size: 30px;
+    padding-top: 75px;
+    padding-bottom: 50px;
+    font-size: 40px;
 }
 
 .carousel-item {
@@ -306,15 +325,15 @@ body {
 }
 
 .carousel-image {
-    height: 500px;
+    height: 440px;
     width: 600px;
-    margin-top: 105px;
+    margin-top: 80px;
     box-shadow: 0 10px 28px 0 rgba(0,0,0,0.14), 0 -45px 0 -25px rgba(255,255,255,0.4), 0 -90px 0 -50px rgba(255,255,255,0.4);
 }
 
 .carousel-heading {
-    display: flex;
     justify-content: space-between;
+    display: none;
 }
 
 .arrow {
@@ -323,12 +342,13 @@ body {
     font-size: 40px;
 }
 
+
 #b-quote {
     font-size: 33px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     color: #656e75;
-    margin: 0px auto 10px;
-    line-height: 46px;
+    margin: 10px auto 30px;
+    line-height: 45px;
 }
 
 #b-quote-svg {
@@ -359,14 +379,15 @@ body {
 }
 
 #c-map {
-    width: 100%;
-    height: 680px;
+    width: 720px;
+    height: 580px;
+
 }
 
 #c-map-content {
     position: absolute;
     z-index: 200;
-    height: 680px;
+    height: 580px;
     width: 720px;
     top: 0;
     pointer-events: none;
@@ -403,7 +424,8 @@ body {
 }
 
 #c-count-line {
-    margin-top: 492px;
+    margin-top: 392px;
+    font-size: 21px;
 }
 
 #c-count-logo {
@@ -413,7 +435,9 @@ body {
 }
 
 #light-count {
-    color: #4189ff;
+    color: #EEE;
+    text-shadow: 0 0 10px #EEE;
+    font-weight: 700;
 }
 #loc-self {
     display: inline;
@@ -435,16 +459,17 @@ body {
 
 #c-title{
     letter-spacing: 2px;
-    font-size: 39px;
+    font-size: 35px;
     margin-top: 72px;
-    margin-bottom: 30px;
     color: #222222;
 }
 
+#c-subtitle {
+    margin-bottom: 20px;
+    color: #888;
+}
 #c-qr-line {
     width: 600px;
-    display: flex;
-    justify-content: space-between;
     margin: 10px auto;
     color: #222222;
 }
@@ -453,13 +478,13 @@ body {
     width: 280px;
     box-shadow: 0 10px 100px 0 rgba(0,0,0,0.1);
     padding: 20px;
-    padding-top: 25px;
     height: 250px;
     background-color: white;
+    margin: 0 auto;
 }
 
 .c-qr-title {
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
@@ -467,7 +492,6 @@ body {
 .c-qr-self {
     opacity: 0.7;
     width: 170px;
-    pointer-events: none;
 }
 
 #c-info {
